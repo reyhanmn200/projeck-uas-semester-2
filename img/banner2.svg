@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#dc3545"/>
+  <circle cx="260" cy="200" r="140" fill="#ffffff" opacity="0.16"/>
+  <text x="80" y="320" font-family="Arial, sans-serif" font-size="58" font-weight="700" fill="white">Murah &amp; Lezat</text>
+  <text x="80" y="390" font-family="Arial, sans-serif" font-size="28" fill="#fff7e6">Mulai Rp15.000</text>
+</svg>

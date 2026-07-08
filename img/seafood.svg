@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#d1ecf1"/>
+  <circle cx="400" cy="250" r="140" fill="#17a2b8"/>
+  <text x="250" y="270" font-family="Arial, sans-serif" font-size="44" font-weight="700" fill="white">Seafood</text>
+</svg>
