@@ -1,12 +1,7 @@
-/* ==========================
-   IMPORT FONT
-========================== */
+
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* ==========================
-   RESET
-========================== */
 
 *{
     margin:0;
@@ -25,9 +20,7 @@ body{
     line-height:1.8;
 }
 
-/* ==========================
-   NAVBAR
-========================== */
+
 
 .navbar{
     margin-bottom: 0;
@@ -66,9 +59,7 @@ body{
     color:#ffc107;
 }
 
-/* ==========================
-   HERO
-========================== */
+
 
 .hero{
     position:relative;
@@ -112,9 +103,7 @@ body{
     background:white;
 }
 
-/* ==========================
-   BUTTON
-========================== */
+
 
 .btn{
     display:inline-block;
@@ -129,9 +118,7 @@ body{
     background:#bb2d3b;
 }
 
-/* ==========================
-   SECTION
-========================== */
+
 
 section{
     padding-top:80px;
@@ -158,9 +145,7 @@ section h2{
     display:block;
 }
 
-/* ==========================
-   TENTANG
-========================== */
+
 
 .tentang-container{
     display:flex;
@@ -189,9 +174,7 @@ section h2{
     border-radius:10px;
 }
 
-/* ==========================
-   MENU
-========================== */
+
 
 .menu-container{
     display:flex;
@@ -232,9 +215,7 @@ section h2{
     margin:15px 0;
 }
 
-/* ==========================
-   KEUNGGULAN
-========================== */
+
 
 #keunggulan{
     background:orange;
@@ -293,9 +274,7 @@ section h2{
     font-size:16px;
 }
 
-/* ==========================
-   CTA
-========================== */
+
 
 #pesan{
     text-align:center;
@@ -323,9 +302,7 @@ section h2{
     background:white;
 }
 
-/* ==========================
-   FOOTER
-========================== */
+
 
 footer{
     background:#212529;
@@ -334,9 +311,7 @@ footer{
     padding:20px;
 }
 
-/* ==========================
-   RESPONSIVE
-========================== */
+
 
 @media(max-width:768px){
 
