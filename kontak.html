@@ -42,40 +42,10 @@
         </p>
 
         <div class="contact-container">
-          <div class="contact-info">
-            <h3>Informasi Kontak</h3>
-
-            <p>
-              <strong>Alamat :</strong><br />
-              Jl. Raya Purwakarta, Jawa Barat
-            </p>
-
-            <p>
-              <strong>WhatsApp :</strong><br />
-              0812-3456-7890
-            </p>
-
-            <p>
-              <strong>Email :</strong><br />
-              seblakateu@gmail.com
-            </p>
-
-            <p>
-              <strong>Jam Operasional :</strong><br />
-              Senin - Minggu<br />
-              10.00 - 22.00 WIB
-            </p>
-
-            <p>
-              <strong>Instagram :</strong><br />
-              @seblakateu
-            </p>
-          </div>
-
           <div class="contact-form">
             <h3>Kirim Pesan</h3>
 
-            <form>
+            <form id="formPesan">
               <label for="nama">Nama</label>
 
               <input
@@ -103,16 +73,17 @@
                 placeholder="Masukkan nomor telepon"
               />
 
-              <label for="pesan">Pesan</label>
+              <label for="pesankontak">Pesan</label>
 
               <textarea
-                id="pesan"
-                name="pesan"
+                id="pesankontak"
+                name="pesankontak"
                 rows="6"
                 placeholder="Tuliskan pesan Anda"
               ></textarea>
 
               <button type="submit" class="btn">Kirim Pesan</button>
+              <p id="hasil" class="form-feedback" aria-live="polite"></p>
             </form>
           </div>
         </div>
@@ -127,5 +98,7 @@
       <hr>
       <p>© 2026 Seblak Ateu. All Rights Reserved.</p>
     </footer>
+
+    <script src="main.js"></script>
   </body>
 </html>

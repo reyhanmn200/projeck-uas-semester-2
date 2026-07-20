@@ -4,21 +4,17 @@
 
 const darkButton = document.getElementById("darkMode");
 
-darkButton.addEventListener("click", function () {
+if (darkButton) {
+    darkButton.addEventListener("click", function () {
+        document.body.classList.toggle("dark");
 
-    document.body.classList.toggle("dark");
-
-    if(document.body.classList.contains("dark")){
-
-        darkButton.innerHTML="☀ Light Mode";
-
-    }else{
-
-        darkButton.innerHTML="🌙 Dark Mode";
-
-    }
-
-});
+        if (document.body.classList.contains("dark")) {
+            darkButton.innerHTML = "☀ Light Mode";
+        } else {
+            darkButton.innerHTML = "🌙 Dark Mode";
+        }
+    });
+}
 
 
 // ==========================================
@@ -30,32 +26,37 @@ function filterProduk(kategori){
     const produk=document.querySelectorAll(".produk");
 
     produk.forEach(function(item){
+        const kategoriItem=item.getAttribute("data-kategori");
 
-        if(kategori=="all"){
-
-            item.style.display="block";
-
+        if(kategori=="all" || kategoriItem==kategori){
+            item.style.display="";
         }
 
         else{
-
-            if(item.classList.contains(kategori)){
-
-                item.style.display="block";
-
-            }
-
-            else{
-
-                item.style.display="none";
-
-            }
-
+            item.style.display="none";
         }
-
     });
 
 }
+
+document.addEventListener("DOMContentLoaded", function(){
+    const filterButtons=document.querySelectorAll("[data-filter]");
+
+    filterButtons.forEach(function(button){
+        button.addEventListener("click", function(){
+            filterButtons.forEach(function(btn){
+                btn.classList.remove("active");
+            });
+
+            this.classList.add("active");
+            filterProduk(this.getAttribute("data-filter"));
+        });
+    });
+
+    if(document.querySelector(".produk")){
+        filterProduk("all");
+    }
+});
 
 
 
@@ -65,65 +66,104 @@ function filterProduk(kategori){
 
 const form=document.getElementById("formPesan");
 
-form.addEventListener("submit",function(e){
+if(form){
 
-    e.preventDefault();
-
-    const nama=document.getElementById("nama").value.trim();
-
-    const email=document.getElementById("email").value.trim();
-
-    const pesan=document.getElementById("pesan").value.trim();
-
+    const nama=document.getElementById("nama");
+    const email=document.getElementById("email");
+    const pesan=document.getElementById("pesan");
     const hasil=document.getElementById("hasil");
 
-    if(nama==""){
-
-        hasil.innerHTML="Nama wajib diisi.";
-
-        hasil.style.color="red";
-
-        return;
-
+    function showFeedback(message, warna){
+        if(hasil){
+            hasil.innerHTML=message;
+            hasil.style.color=warna;
+            hasil.style.display="block";
+        }
     }
 
-    if(email==""){
-
-        hasil.innerHTML="Email wajib diisi.";
-
-        hasil.style.color="red";
-
-        return;
-
+    function resetFieldStyle(field){
+        if(field){
+            field.style.borderColor="#ced4da";
+            field.style.boxShadow="none";
+        }
     }
 
-    if(!email.includes("@")){
-
-        hasil.innerHTML="Format email tidak valid.";
-
-        hasil.style.color="red";
-
-        return;
-
+    function setFieldError(field){
+        if(field){
+            field.style.borderColor="#dc3545";
+            field.style.boxShadow="0 0 0 0.2rem rgba(220,53,69,.25)";
+        }
     }
 
-    if(pesan==""){
+    function validasiField(field){
+        const value=field.value.trim();
 
-        hasil.innerHTML="Pesan belum diisi.";
+        if(field.id==="nama" && value===""){
+            setFieldError(field);
+            return "Nama wajib diisi.";
+        }
 
-        hasil.style.color="red";
+        if(field.id==="email"){
+            if(value===""){
+                setFieldError(field);
+                return "Email wajib diisi.";
+            }
 
-        return;
+            if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)){
+                setFieldError(field);
+                return "Format email tidak valid.";
+            }
+        }
 
+        if(field.id==="pesan" && value===""){
+            setFieldError(field);
+            return "Pesan belum diisi.";
+        }
+
+        resetFieldStyle(field);
+        return "";
     }
 
-    hasil.innerHTML="✅ Pesanan berhasil dikirim.";
+    [nama,email,pesan].forEach(function(field){
+        if(!field) return;
 
-    hasil.style.color="green";
+        field.addEventListener("input", function(){
+            const error=validasiField(this);
 
-    form.reset();
+            if(error){
+                showFeedback(error, "red");
+            }else{
+                showFeedback("", "green");
+            }
+        });
+    });
 
-});
+    form.addEventListener("submit",function(e){
+
+        e.preventDefault();
+
+        const errorList=[];
+
+        [nama,email,pesan].forEach(function(field){
+            if(!field) return;
+
+            const error=validasiField(field);
+            if(error){
+                errorList.push(error);
+            }
+        });
+
+        if(errorList.length>0){
+            showFeedback(errorList[0], "red");
+            return;
+        }
+
+        showFeedback("✅ Pesanan berhasil dikirim.", "green");
+        form.reset();
+        [nama,email,pesan].forEach(resetFieldStyle);
+
+    });
+}
 
 
 
@@ -265,7 +305,7 @@ window.onload=function(){
 // NAVBAR ACTIVE
 // ==========================================
 
-const menu=document.querySelectorAll(".nav-link");
+const menu=document.querySelectorAll(".nav-menu a");
 
 menu.forEach(function(link){
 

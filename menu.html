@@ -39,8 +39,18 @@
           harga yang terjangkau
         </p>
 
+        <div class="filter-buttons">
+          <button class="filter-btn active" type="button" data-filter="all">Semua</button>
+          <button class="filter-btn" type="button" data-filter="original">Original</button>
+          <button class="filter-btn" type="button" data-filter="ceker">Ceker</button>
+          <button class="filter-btn" type="button" data-filter="seafood">Seafood</button>
+          <button class="filter-btn" type="button" data-filter="sosis">Sosis</button>
+          <button class="filter-btn" type="button" data-filter="bakso">Bakso</button>
+          <button class="filter-btn" type="button" data-filter="komplit">Komplit</button>
+        </div>
+
         <div class="menu-container">
-          <article class="card">
+          <article class="card produk" data-kategori="original">
             <img src="img/seblakoriginal.jpg" alt="Seblak Original" />
 
             <div class="card-body">
@@ -51,7 +61,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card produk" data-kategori="ceker">
             <img src="img/seblakceker2.jpg" alt="Seblak Ceker" />
             <div class="card-body">
               <h3 class="card-title">Seblak Ceker</h3>
@@ -64,7 +74,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card produk" data-kategori="seafood">
             <img src="img/seblakseafood.jpg" alt="Seblak Seafood" />
 
             <div class="card-body">
@@ -78,7 +88,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card produk" data-kategori="sosis">
             <img src="img/seblaksosis.jpg" alt="Seblak Sosis" />
 
             <div class="card-body">
@@ -92,7 +102,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card produk" data-kategori="bakso">
             <img src="img/seblakbakso2.jpg" alt="Seblak Bakso" />
 
             <div class="card-body">
@@ -106,7 +116,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card produk" data-kategori="komplit">
             <img src="img/seblakkomplit3.jpeg" alt="Seblak Komplit" />
 
             <div class="card-body">
@@ -131,5 +141,7 @@
       <hr>
       <p>© 2026 Seblak Ateu. All Rights Reserved.</p>
     </footer>
+
+    <script src="main.js"></script>
   </body>
 </html>
