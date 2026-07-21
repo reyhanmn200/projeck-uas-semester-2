@@ -555,12 +555,11 @@ footer {
   font-size: 32px;
 }
 
-<<<<<<< HEAD
 .social-icon:hover {
   background: #bb2d3b;
   transform: scale(1.1);
-<<<<<<< HEAD
-=======
+}
+
 .social-icon:hover{
     background: white;
     transform: translateY(-8px);
@@ -568,7 +567,6 @@ footer {
 
 .social-icon:active{
   transform: translateY(-12px);
->>>>>>> f29beb0 (ubah html dan css)
 }
 
 .social-icon.instagram {
