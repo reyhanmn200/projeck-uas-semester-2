@@ -168,6 +168,54 @@ section h2 {
   box-shadow: green 0 0 5px;
 }
 
+.contact-container{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    align-items:stretch;
+}
+
+.contact-form,
+.contact-map{
+    flex:1;
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.contact-form h3,
+.contact-map h3{
+    text-align:center;
+    color:#dc3545;
+    margin-bottom:25px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    margin-bottom:15px;
+}
+
+.contact-map iframe{
+    width:100%;
+    height:450px;
+    border:none;
+    border-radius:15px;
+}
+
+.contact-text {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 18px;
+  color: #555;
+}
+
 #home {
   padding: 0;
 }
@@ -185,19 +233,22 @@ section h2 {
   border-radius: 15px;
 }
 
-.tentang-text {
-  text-align: justify;
-  font-size: 22px;
-  align-items: first baseline;
+.tentang-text{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:justify;
+    font-size:18px;
 }
 
-.tentang-text h2 {
-  text-align: left;
-  margin-bottom: 10px;
+.tentang-text h2{
+    text-align:left;
+    margin-bottom:12px;
 }
 
-.tentang-info {
-  margin-top: 30px;
+.tentang-text p{
+    margin:0;
+    line-height:1.9;
 }
 
 #visi,
@@ -309,10 +360,6 @@ section h2 {
     display:block;
 }
 
-.gallery-item:hover{
-    transform:translateY(-10px);
-}
-
 .info-item {
   display: flex;
   align-items: center;
@@ -406,7 +453,6 @@ section h2 {
 }
 
 .keunggulan-card:hover {
-  transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
@@ -466,6 +512,16 @@ section h2 {
   background: white;
 }
 
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
 footer {
   background: #212529;
   color: white;
@@ -487,12 +543,9 @@ footer {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #dc3545;
-  color: white;
+  background: white;
   text-decoration: none;
-  font-size: 28px;
-  transition: 0.3s;
-  animation: bounce 2s infinite;
+  transition: transform 0.3s ease;
 }
 
 .social-icon span {
@@ -502,14 +555,23 @@ footer {
   font-size: 32px;
 }
 
+<<<<<<< HEAD
 .social-icon:hover {
   background: #bb2d3b;
   transform: scale(1.1);
 <<<<<<< HEAD
+=======
+.social-icon:hover{
+    background: white;
+    transform: translateY(-8px);
+}
+
+.social-icon:active{
+  transform: translateY(-12px);
+>>>>>>> f29beb0 (ubah html dan css)
 }
 
 .social-icon.instagram {
-  animation-delay: 0s;
   background: linear-gradient(
     45deg,
     #f09433 0%,
@@ -521,23 +583,17 @@ footer {
 }
 
 .social-icon.facebook {
-  animation-delay: 0.2s;
   background: #1877f2;
 }
 
 .social-icon.whatsapp {
-  animation-delay: 0.4s;
   background: #25d366;
 }
 
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
+.social-icon img{
+    width:32px;
+    height:32px;
+    object-fit:contain;
 }
 
 footer h3 {
