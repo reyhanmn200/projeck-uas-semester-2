@@ -31,11 +31,11 @@ body {
   height: auto;
 }
 
-.navbar-brand {
-  color: white;
-  font-size: 50px;
-  font-weight: bold;
-  margin-left: -400px;
+.navbar-brand{
+    color:white;
+    font-size:40px;
+    font-weight:bold;
+    margin-left:0;
 }
 
 .nav-menu {
@@ -118,7 +118,7 @@ section h2 {
   text-align: center;
   color: #dc3545;
   margin-bottom: 40px;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .filter-buttons {
@@ -211,17 +211,17 @@ section h2 {
   padding: 0;
 }
 
-.tentang-container {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  padding-left: 50px;
-  padding-right: 50px;
+.tentang-container{
+    display:flex;
+    align-items:center;
+    gap:40px;
+    padding:0 20px;
 }
 
-.tentang-gambar img {
-  width: 500px;
-  border-radius: 15px;
+.tentang-gambar img{
+    width:100%;
+    max-width:500px;
+    height:auto;
 }
 
 .tentang-text{
@@ -244,7 +244,7 @@ section h2 {
 
 #visi,
 #misi {
-  padding: 80px 60px;
+ padding:50px 20px;
   background: orange;
 }
 
@@ -262,17 +262,20 @@ section h2 {
 }
 
 .visi-image img,
-.misi-image img {
-  width: 350px;
+.misi-image img{
+    width:100%;
+    max-width:350px;
+    height:auto;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align:center;
 }
 
 .visi-text h2,
 .misi-text h2 {
   text-align: center;
   color: #dc3545;
-  font-size: 42px;
+  font-size: 30px;
 }
 
 .garis-visi {
@@ -294,18 +297,18 @@ section h2 {
 
 .visi-text p,
 .misi-text li {
-  font-size: 20px;
+  font-size: 17px;
   line-height: 2;
 }
 
 #galeri{
-    padding:80px 50px;
+    padding:50px 20px;
     background:#fff;
     text-align:center;
 }
 
 #galeri h2{
-    font-size:48px;
+    font-size:30px;
     color:#dc3545;
     margin-bottom:15px;
 }
@@ -337,7 +340,9 @@ section h2 {
 }
 
 .gallery-item{
-    width:350px;
+     margin:auto;
+    width:100%;
+    max-width:350px;
     background:#fff;
     padding:10px;
     box-shadow:0 5px 15px rgba(0,0,0,.15);
@@ -354,9 +359,10 @@ section h2 {
 .garis {
   width: 100%;
   max-width: 1200px;
-  height: 8px;
+  height: 10px;
   background: #dc3545;
-  margin: 0px auto 30px;
+  margin: -80px auto 30px;
+  border-radius: 10px;
 }
 
 .menu-container {
@@ -364,10 +370,12 @@ section h2 {
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
+   align-items:stretch;
 }
 
 .card {
-  width: 300px;
+  width:100%;
+  max-width:300px;
   background: white;
   border-radius: 15px;
   overflow: hidden;
@@ -418,7 +426,8 @@ section h2 {
 }
 
 .keunggulan-card {
-  width: 250px;
+  width: 100%;
+  max-width:300px;
   background: white;
   padding: 30px 20px;
   border-radius: 20px;
@@ -558,34 +567,81 @@ footer hr {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 15px;
-  }
+@media (max-width:768px){
 
-  .nav-menu {
-    flex-direction: column;
-    text-align: center;
-  }
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+    }
 
-  .tentang-container {
-    flex-direction: column;
-  }
+    .navbar-brand{
+        font-size:30px;
+    }
 
-  .tentang-gambar img {
-    width: 100%;
-  }
+    .nav-menu{
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+        padding-left:0;
+    }
 
-  .hero img {
-    height: 350px;
-  }
+    .hero img{
+        height:220px;
+    }
 
-  .hero-text h2 {
-    font-size: 32px;
-  }
+    .hero-info h2{
+        font-size:24px;
+    }
 
-  .hero-text p {
-    font-size: 16px;
-  }
+    .hero-info p{
+        font-size:16px;
+    }
+
+    section{
+        padding:50px 20px;
+    }
+
+    .tentang-container,
+    .visi-container,
+    .misi-container,
+    .contact-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    #visi,
+    #misi{
+        padding:50px 20px;
+    }
+
+    .tentang-text{
+        text-align:center;
+        width:100%;
+    }
+
+    .tentang-text h2{
+        text-align:center;
+    }
+
+    section h2,
+    #galeri h2,
+    .visi-text h2,
+    .misi-text h2{
+        font-size:30px;
+    }
+
+    .visi-text p,
+    .misi-text li{
+        font-size:17px;
+    }
+
+    .card{
+        max-width:100%;
+    }
+
+    .keunggulan-card{
+        width:100%;
+        max-width:300px;
+    }
 }
