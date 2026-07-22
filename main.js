@@ -1,26 +1,3 @@
-// ==========================================
-// DARK MODE
-// ==========================================
-
-const darkButton = document.getElementById("darkMode");
-
-if (darkButton) {
-    darkButton.addEventListener("click", function () {
-        document.body.classList.toggle("dark");
-
-        if (document.body.classList.contains("dark")) {
-            darkButton.innerHTML = "☀ Light Mode";
-        } else {
-            darkButton.innerHTML = "🌙 Dark Mode";
-        }
-    });
-}
-
-
-// ==========================================
-// FILTER PRODUK
-// ==========================================
-
 function filterProduk(kategori){
 
     const produk=document.querySelectorAll(".produk");
@@ -58,19 +35,13 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 });
 
-
-
-// ==========================================
-// VALIDASI FORM
-// ==========================================
-
 const form=document.getElementById("formPesan");
 
 if(form){
 
     const nama=document.getElementById("nama");
     const email=document.getElementById("email");
-    const pesan=document.getElementById("pesan");
+    const pesan=document.getElementById("pesankontak");
     const hasil=document.getElementById("hasil");
 
     function showFeedback(message, warna){
@@ -115,7 +86,7 @@ if(form){
             }
         }
 
-        if(field.id==="pesan" && value===""){
+        if(field.id==="pesankontak" && value===""){
             setFieldError(field);
             return "Pesan belum diisi.";
         }
@@ -165,12 +136,6 @@ if(form){
     });
 }
 
-
-
-// ==========================================
-// SCROLL ANIMATION
-// ==========================================
-
 const cards=document.querySelectorAll(".card");
 
 window.addEventListener("scroll",function(){
@@ -193,12 +158,6 @@ window.addEventListener("scroll",function(){
 
 });
 
-
-
-// ==========================================
-// EFFECT CARD
-// ==========================================
-
 cards.forEach(function(card){
 
     card.style.opacity="0";
@@ -208,12 +167,6 @@ cards.forEach(function(card){
     card.style.transition=".8s";
 
 });
-
-
-
-// ==========================================
-// BACK TO TOP BUTTON
-// ==========================================
 
 const tombol=document.createElement("button");
 
@@ -265,12 +218,6 @@ tombol.addEventListener("click",function(){
 
 });
 
-
-
-// ==========================================
-// HOVER CARD
-// ==========================================
-
 cards.forEach(function(card){
 
     card.addEventListener("mouseenter",function(){
@@ -287,23 +234,11 @@ cards.forEach(function(card){
 
 });
 
-
-
-// ==========================================
-// WELCOME ALERT
-// ==========================================
-
 window.onload=function(){
 
-    console.log("Website Seblak Mamah Nay berhasil dimuat.");
+    console.log("Website Seblak Ateu berhasil dimuat.");
 
 };
-
-
-
-// ==========================================
-// NAVBAR ACTIVE
-// ==========================================
 
 const menu=document.querySelectorAll(".nav-menu a");
 
@@ -322,25 +257,3 @@ menu.forEach(function(link){
     });
 
 });
-
-
-
-// ==========================================
-// JAM OPERASIONAL
-// ==========================================
-
-const sekarang=new Date();
-
-const jam=sekarang.getHours();
-
-if(jam>=10 && jam<=22){
-
-    console.log("Toko Sedang Buka");
-
-}
-
-else{
-
-    console.log("Toko Sedang Tutup");
-
-}
